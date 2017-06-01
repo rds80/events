@@ -1,3 +1,4 @@
+import { EventService } from 'events/shared/event.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -20,7 +21,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    EventService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
