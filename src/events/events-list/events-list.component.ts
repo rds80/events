@@ -1,6 +1,7 @@
-import { ToastrService } from './../../common/toastr.service';
+import { EventService } from './../shared/event.service';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { Component, OnInit } from '@angular/core';
-import { EventService } from "events/shared/event.service";
+
 
 @Component({
   selector: 'events-list',
@@ -10,7 +11,7 @@ import { EventService } from "events/shared/event.service";
 export class EventsListComponent implements OnInit {
   events: any[]
 
-  constructor(private eventService: EventService, private toastr: ToastrService) { }
+  constructor(private eventService: EventService, private toastr: ToastsManager) { }
 
   ngOnInit() {
     this.events = this.eventService.getEvents();
