@@ -1,0 +1,1 @@
+export * from 'events/shared/event.service';
