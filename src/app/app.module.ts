@@ -7,7 +7,7 @@ import { HttpModule } from '@angular/http';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 
 import { AppComponent } from './app.component';
-import { 
+import {
   EventsListComponent,
   EventThumbnailComponent,
   EventDetailsComponent,
@@ -42,7 +42,7 @@ import { appRoutes } from './routes';
   providers: [
     EventService,
     EventRouteActivator,
-    EventListResolver, 
+    EventListResolver,
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
@@ -52,10 +52,10 @@ import { appRoutes } from './routes';
 })
 export class AppModule { }
 
-  function checkDirtyState(component: CreateEventComponent) {
-    if (component.isDirty) {
-      return window.confirm('You have not saved this event, do you really want to cancel?')
-    }
-    return true
+export function checkDirtyState(component: CreateEventComponent) {
+  if (component.isDirty) {
+    return window.confirm('You have not saved this event, do you really want to cancel?')
   }
+  return true
+}
 
