@@ -10,9 +10,9 @@ import { AppComponent } from './app.component';
 import {
   EventsListComponent,
   EventThumbnailComponent,
+  EventService,
   EventDetailsComponent,
   CreateEventComponent,
-  EventService,
   EventRouteActivator,
   EventListResolver
 } from 'events/index';
@@ -27,8 +27,8 @@ import { AuthService } from "user/auth.service";
     AppComponent,
     EventsListComponent,
     EventThumbnailComponent,
-    NavBarComponent,
     EventDetailsComponent,
+    NavBarComponent,
     CreateEventComponent,
     Error404Component
   ],

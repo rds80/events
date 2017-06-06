@@ -1,7 +1,7 @@
 <h1>New Event</h1>
 <hr>
 <div class="col-md-6">
-  <form #newEventForm="ngForm" (ngSubmit)="saveEvent(newEventForm.value" autocomplete="off" novalidate>
+  <form #newEventForm="ngForm" (ngSubmit)="saveEvent(newEventForm.value)" autocomplete="off" novalidate>
     <div class="form-group" [ngClass]="{'error': newEventForm.controls.name?.invalid && newEventForm.controls.name?.touched}">
       <label for="eventName">Event Name:</label>
       <em *ngIf="newEventForm.controls.name?.invalid && (newEventForm.controls.name?.touched)">Required</em>
@@ -22,5 +22,34 @@
       <em *ngIf="newEventForm.controls.price?.invalid && (newEventForm.controls.price?.touched)">Required</em>
       <input (ngModel)="price" name="price" required id="evenPrice" type="text" class="form-control" placeholder="event price..">
     </div>
+
+    <div ngModelGroup="location">
+      <div class="form-group">
+        <label for="address">Event Location:</label>
+        <input type="text" class="form-control" (ngModel)="address" name="address" id="address" type="text" placeholder="Address of event..." />
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" class="form-control" (ngModel)="city" name="city" id="city" type="text" placeholder="City..." />
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" (ngModel)="country" name="country" id="country" type="text" placeholder="Country..." />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="onlineUrl">Online Url:</label>
+      <input type="text" class="form-control" (ngModel)="onlineUrl" name="onlineUrl" id="onlineUrl" placeholder="Online Url..."/>
+    </div>
+    <div class="form-group" [ngClass]="{'error': newEventForm.controls.imageUrl?.invalid && newEventForm.controls.imageUrl?.touched}">
+      <label for="imageUrl">Image:</label>
+      <em *ngIf="newEventForm.controls.imageUrl?.invalid && newEventForm.controls.imageUrl?.touched && newEventForm.controls.imageUrl?.errors.required">Required</em>
+      <em *ngIf="newEventForm.controls.imageUrl?.invalid && newEventForm.controls.imageUrl?.touched && newEventForm.controls.imageUrl?.errors.pattern">Must be a png or jpg url</em>
+      <input type="text" class="form-control" (ngModel)="imageUrl" name="imageUrl" required pattern=".*\/.*.(png|jpg)" id="imageUrl" placeHolder="url of image..."/>
+      <img [src]="newEventForm.controls.imageUrl.value" *ngIf="newEventForm.controls.imageUrl?.valid"/>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Save</button>
+    <button class="btn btn-default" type="button"  (click)="cancel()">Cancel</button>
   </form>
 </div>
