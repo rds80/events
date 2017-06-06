@@ -1,3 +1,4 @@
+import { AuthService } from 'user/auth.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,13 +15,14 @@ import {
   EventDetailsComponent,
   CreateEventComponent,
   EventRouteActivator,
-  EventListResolver
+  EventListResolver,
+  CreateSessionComponent
 } from 'events/index';
 
 import { NavBarComponent } from 'nav-bar/nav-bar.component';
 import { Error404Component } from 'errors/error404/error404.component';
 import { appRoutes } from './routes';
-import { AuthService } from "user/auth.service";
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { AuthService } from "user/auth.service";
     EventDetailsComponent,
     NavBarComponent,
     CreateEventComponent,
-    Error404Component
+    Error404Component,
+    CreateSessionComponent
   ],
   imports: [
     BrowserModule,
