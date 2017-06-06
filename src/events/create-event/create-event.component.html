@@ -1,9 +1,26 @@
 <h1>New Event</h1>
 <hr>
 <div class="col-md-6">
-  <h3>[Create Event form will go here]</h3>
-  <br>
-  <br>
-  <button class="btn btn-primary" type="submit">Save</button>
-  <button class="btn btn-default" type="button" (click)="cancel()">Cancel</button>
+  <form #newEventForm="ngForm" (ngSubmit)="saveEvent(newEventForm.value" autocomplete="off" novalidate>
+    <div class="form-group" [ngClass]="{'error': newEventForm.controls.name?.invalid && newEventForm.controls.name?.touched}">
+      <label for="eventName">Event Name:</label>
+      <em *ngIf="newEventForm.controls.name?.invalid && (newEventForm.controls.name?.touched)">Required</em>
+      <input (ngModel)="name" name="name" required id="eventName" type="text" class="form-control" placeholder="Name of your event..">
+    </div>
+    <div class="form-group" [ngClass]="{'error': newEventForm.controls.date?.invalid && newEventForm.controls.date?.touched}">
+      <label for="eventDate">Event Name:</label>
+      <em *ngIf="newEventForm.controls.date?.invalid && (newEventForm.controls.date?.touched)">Required</em>
+      <input (ngModel)="date" name="date" required id="eventDate" type="text" class="form-control" placeholder="Format (mm/dd/yyyy)">
+    </div>
+    <div class="form-group" [ngClass]="{'error': newEventForm.controls.time?.invalid && newEventForm.controls.time?.touched}">
+      <label for="eventTime">Event Time:</label>
+      <em *ngIf="newEventForm.controls.time?.invalid && (newEventForm.controls.time?.touched)">Required</em>
+      <input (ngModel)="time" name="time" required id="eventTime" type="text" class="form-control" placeholder="Start and End Time..">
+    </div>
+    <div class="form-group" [ngClass]="{'error': newEventForm.controls.price?.invalid && newEventForm.controls.price?.touched}">
+      <label for="eventPrice">Event Price:</label>
+      <em *ngIf="newEventForm.controls.price?.invalid && (newEventForm.controls.price?.touched)">Required</em>
+      <input (ngModel)="price" name="price" required id="evenPrice" type="text" class="form-control" placeholder="event price..">
+    </div>
+  </form>
 </div>
