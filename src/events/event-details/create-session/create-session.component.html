@@ -16,7 +16,7 @@
     <div class="form-group" [ngClass]="{'error': duration.invalid && duration.dirty}">
       <label for="duration">Duration:</label>
       <em *ngIf="duration.invalid && duration.dirty">Required</em>
-      <select name="" id="" class="form-control" formControlName="duration">
+      <select class="form-control" formControlName="duration">
         <option value="">Select Duration...</option>
         <option value="1">Half Hour</option>
         <option value="2">1 Hour</option>
@@ -27,7 +27,7 @@
     <div class="form-group" [ngClass]="{'error': level.invalid && level.dirty}">
       <label for="level">Level:</label>
       <em *ngIf="level.invalid && level.dirty">Required</em>
-      <select name="" id="" class="form-control" formControlName="level">
+      <select class="form-control" formControlName="level">
         <option value="">Select Level...</option>
         <option value="Beginner">Beginner</option>
         <option value="Intermediate">Intermediate</option>
