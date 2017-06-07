@@ -6,12 +6,12 @@
     <div class="form-group" [ngClass]="{'error': name.invalid && name.dirty}">
       <label for="sessionName">Session Name:</label>
       <em *ngIf="name.invalid && name.dirty">Required</em>
-      <input type="text" class="form-control" formControlName="name" id="sessionName" placeholder="session name...">
+      <input type="text" class="form-control" formControlName="name" id="sessionName" placeholder="session name..."/>
     </div>
     <div class="form-group" [ngClass]="{'error': presenter.invalid && presenter.dirty}">
       <label for="Presenter">Presenter:</label>
       <em *ngIf="presenter.invalid && presenter.dirty">Required</em>
-      <input type="text" class="form-control" formControlName="presenter" id="presenter" placeholder="presenter...">
+      <input type="text" class="form-control" formControlName="presenter" id="presenter" placeholder="presenter..."/>
     </div>
     <div class="form-group" [ngClass]="{'error': duration.invalid && duration.dirty}">
       <label for="duration">Duration:</label>
@@ -41,7 +41,7 @@
       <em *ngIf="abstract.invalid && abstract.dirty && abstract?.errors.restrictedWords">Restricted words found: {{abstract.errors.restrictedWords}}</em>
       <textarea formControlName="abstract" id="abstract" rows="3" class="form-control" placeholder="abstract..."></textarea>
     </div>
-    <button class="btn btn-primary" type="submit">Save</button>
-    <button class="btn btn-default" type="button">Cancel</button>
+    <button class="btn btn-primary" [disabled]="newSessionForm.invalid"  type="submit">Save</button>
+    <button class="btn btn-default" type="button" (click)="cancel()">Cancel</button>
   </form>
 </div>
