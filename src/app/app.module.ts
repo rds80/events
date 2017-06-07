@@ -23,6 +23,7 @@ import {
 import { NavBarComponent } from 'nav-bar/nav-bar.component';
 import { Error404Component } from 'errors/error404/error404.component';
 import { appRoutes } from './routes';
+import { CollapsibleWellComponent } from './collapsible-well/collapsible-well.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { appRoutes } from './routes';
     CreateEventComponent,
     Error404Component,
     CreateSessionComponent,
-    SessionListComponent
+    SessionListComponent,
+    CollapsibleWellComponent
   ],
   imports: [
     BrowserModule,
