@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 
+
 import { AppComponent } from './app.component';
 import {
   EventsListComponent,
@@ -17,7 +18,8 @@ import {
   EventRouteActivator,
   EventListResolver,
   CreateSessionComponent,
-  SessionListComponent
+  SessionListComponent,
+  DurationPipe
 } from 'events/index';
 
 import { NavBarComponent } from 'nav-bar/nav-bar.component';
@@ -36,7 +38,8 @@ import { CollapsibleWellComponent } from './collapsible-well/collapsible-well.co
     Error404Component,
     CreateSessionComponent,
     SessionListComponent,
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule,
