@@ -22,10 +22,13 @@ import {
   DurationPipe
 } from 'events/index';
 
+import { TOASTR_TOKEN, Toastr } from 'common/toastr.service';
 import { NavBarComponent } from 'nav-bar/nav-bar.component';
 import { Error404Component } from 'errors/error404/error404.component';
 import { appRoutes } from './routes';
 import { CollapsibleWellComponent } from './collapsible-well/collapsible-well.component';
+
+declare let toastr: Toastr;
 
 @NgModule({
   declarations: [
