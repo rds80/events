@@ -19,7 +19,8 @@ import {
   EventListResolver,
   CreateSessionComponent,
   SessionListComponent,
-  DurationPipe
+  DurationPipe,
+  UpvoteComponent
 } from 'events/index';
 import { JQ_TOKEN,
   SimpleModalComponent,
@@ -29,7 +30,6 @@ import { NavBarComponent } from 'nav-bar/nav-bar.component';
 import { Error404Component } from 'errors/error404/error404.component';
 import { appRoutes } from './routes';
 import { CollapsibleWellComponent } from './collapsible-well/collapsible-well.component';
-
 
 declare let jQuery : Object;
 declare let toastr: Toastr;
@@ -48,7 +48,8 @@ declare let toastr: Toastr;
     CollapsibleWellComponent,
     DurationPipe,
     SimpleModalComponent,
-    ModalTriggerDirective
+    ModalTriggerDirective,
+    UpvoteComponent
   ],
   imports: [
     BrowserModule,
