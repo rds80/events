@@ -31,7 +31,7 @@ import { appRoutes } from './routes';
 import { CollapsibleWellComponent } from './collapsible-well/collapsible-well.component';
 
 
-declare let jQuery : any;
+declare let jQuery : Object;
 declare let toastr: Toastr;
 
 @NgModule({
