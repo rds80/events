@@ -23,7 +23,7 @@
       <input (ngModel)="price" name="price" required id="evenPrice" type="text" class="form-control" placeholder="event price..">
     </div>
 
-    <div ngModelGroup="location">
+    <div ngModelGroup="location" #locationGroup="ngModelGroup" validateLocation>
       <div class="form-group">
         <label for="address">Event Location:</label>
         <input type="text" class="form-control" (ngModel)="address" name="address" id="address" type="text" placeholder="Address of event..." />
