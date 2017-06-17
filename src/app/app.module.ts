@@ -20,7 +20,8 @@ import {
   CreateSessionComponent,
   SessionListComponent,
   DurationPipe,
-  UpvoteComponent
+  UpvoteComponent,
+  VoterService
 } from 'events/index';
 import { JQ_TOKEN,
   SimpleModalComponent,
@@ -69,7 +70,8 @@ declare let toastr: Toastr;
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
     },
-    AuthService
+    AuthService,
+    VoterService
   ],
   bootstrap: [AppComponent]
 })

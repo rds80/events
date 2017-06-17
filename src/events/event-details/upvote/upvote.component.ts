@@ -19,4 +19,8 @@ export class UpvoteComponent implements OnInit {
   ngOnInit() {
   }
 
+  onClick() {
+    this.vote.emit({});
+  }
+
 }
