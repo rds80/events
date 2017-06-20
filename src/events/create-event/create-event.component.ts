@@ -9,16 +9,17 @@ import { Router } from "@angular/router";
 })
 export class CreateEventComponent implements OnInit {
   isDirty: boolean = true;
+  event: any = { location: {} }
 
   constructor(private router: Router, private eventService: EventService) {
 
-   }
+  }
 
-   saveEvent(formValues) {
-     this.eventService.saveEvent(formValues);
-     this.isDirty = false;
-     this.router.navigate(['/events']);
-   }
+  saveEvent(formValues) {
+    this.eventService.saveEvent(formValues);
+    this.router.navigate(['/events']);
+    this.isDirty = false;
+  }
 
   ngOnInit() {
   }
